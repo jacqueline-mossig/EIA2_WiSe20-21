@@ -1,0 +1,24 @@
+{
+  "name": "eia2_wise20_21",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/mongodb": "^3.6.0",
+    "mongodb": "^3.6.3"
+  },
+  "scripts": {
+    "start": "node Aufgaben/Endaufgabe_EIA2/Server/Server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacqueline-mossig/EIA2_WiSe20_21.git"
+  },
+  "author": "jacqueline_mossig",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacqueline-mossig/EIA2_WiSe20_21/issues"
+  },
+  "homepage": "https://github.com/jacqueline-mossig/EIA2_WiSe20_21#readme",
+  "devDependencies": {}
+}

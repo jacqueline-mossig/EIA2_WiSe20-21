@@ -1,0 +1,94 @@
+hmtl, body {
+    background-color: #000000;
+    height: 100%;
+}
+
+body {
+    display: grid;
+    grid-auto-rows: min-content min-content auto;
+    font-family: 'Brush Script MT', 'Mystery Quest', Arial, cursive;
+    color: #ffffff;
+    text-shadow: 2px 1px #666666;
+}
+
+h1{
+    margin-top: 5px;
+    font-size: 4em;
+    text-decoration-line: underline;
+    margin-bottom: auto;
+    margin-left: 0.5%;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    margin-top: 1px;
+}
+
+#userInputRocketOne{
+    position: relative;
+    border: thin solid #ffffff;
+    width: 30%;
+    padding: 2%;
+}
+
+#userOutputRocketOne{
+    float: left;
+    border: thin solid #ffffff;
+    width: 30%;
+    padding: 2%;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#fireworksAnimation{
+    position: relative;
+    border: thin solid #ffffff;
+    height: 400px;
+    width: 1000px;
+    padding: 2%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button{
+    font-family: 'Brush Script MT', 'Mystery Quest', Arial, cursive;
+    font-size: 1em;
+    color: #ffffff;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10%;
+    box-shadow: 0 3px 10px #666666;
+    background-color: #000000;
+}
+
+#rocketOneApproved, #rocketOneNotApproved{
+    margin-bottom: 30px;
+    float: left;
+    margin-left: 71px;
+}
+
+#startAnimation{
+    position: absolute;
+    top: 45%;
+    left: 45%;
+}
+
+#choiseRocketOne, #choiseRocketTwo, #choiseRocketThree, #saveRockets, #deleteRockets {
+    float: left;
+    margin-top: 20px;
+    margin-left: 140px;
+}
+
+button:hover {
+    background-color: #0066ffda;
+    }
+
+footer{
+    margin-top: auto;
+    text-align: center;
+    font-size: 2em;
+}

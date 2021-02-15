@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Endaufgabe EIA2 - Ein Feuerwerk von Jacqueline Moßig (MKB, 262533)</Memory-Spiel></title>
+    <link rel="stylesheet" href="Fireworks.css">
+    <script src="Canvas.js"></script>
+    <script src="Anpassung.js"></script>
+    <script src="Tools.js"></script>
+    <script src="Fireworks.js"></script>
+    <script src="Vector.js"></script>
+    <script src="Server/Server.js"></script>
+    <!-- <script src="Save.js"></script> -->
+</head>
+
+<body>
+    <header>
+        <h1>Feuerwerk!</h1>
+    </header>
+
+    <h2 class="general">Hier kannst du deine Raketen ganz individuell gestalten. 
+        Wähle ihre Eigenschaften, drücke dann auf 'Raketenvorschau' und klicke in ihr Feld, um sie zu sehen.</h2>
+
+    <form id="userInputRocketOne" method="GET">
+        <div>
+            <h2>Wie soll deine erste Rakete aussehen?</h2>
+            <h3>Rakete</h3>
+            <fieldset id="Rocket">
+                <legend>Farbe der Raketenbasis</legend>
+                <select name="ColorRocket" id="colorRocket">
+                    <option value="#cc0000">Rot</option>
+                    <option value="#0000ff">Blau</option>
+                    <option value="#ffff00">Gelb</option>
+                </select>
+                <hr />
+            <legend>Form der Rakete</legend>
+            <select name="FormRocket" id="formRocket">
+                <option value="CircularRocket">Kreisförmig</option>
+                <option value="HeartLikeRocket">Herzförmig</option>
+                <option value="TriangularRocket">Dreieckig</option>
+                <option value="RectangularRocket">Viereckig</option>
+                <option value="StarlikeRocket">Sternförmig</option>
+            </select>
+            <hr />
+            <legend>Größe der Rakete</legend>
+            <span class="span">
+                <span>
+                Klein
+                <input type="range" name="SizeRocket" id="sizeRocket" min="10px" max="30px" step="5" value="5"/>
+                Groß 
+            </span>
+            </span>
+            <hr />
+            <legend>Explsionsradius der Rakete</legend>
+            <span class="span">
+                <span>
+                    Klein
+                    <input type="range" name="ExplosionRadiusRocket" id="explosionRadiusRocket" min="20px" max="200px"
+                        step="10" value="10" />
+                    Groß 
+                </span>
+            </span>
+            </fieldset>
+            <hr />
+            <h3>Partikel der Rakete</h3>
+            <fieldset id="Particles">
+                <legend>Farbe der Partikel</legend>
+                <select name="ColorParticle" id="colorParticle">
+                    <option value="red">Rot</option>
+                    <option value="blau">Blau</option>
+                    <option value="yellow">Gelb</option>
+                </select>
+                <hr />
+                <legend>Form der Partikel</legend>
+                <select name="FormParticle" id="formParticle">
+                    <option value="CircularParticle">Kreisförmig</option>
+                    <option value="HeartLikeParticle">Herzförmig</option>
+                    <option value="TriangularParticle">Dreieckig</option>
+                    <option value="RectangularParticle">Viereckig</option>
+                    <option value="StarlikeParticle">Sternförmig</option>
+                </select>
+                <hr />
+                <legend>Größe der Rakete</legend>
+                <span class="span">
+                <span>
+                    Klein
+                    <input type="range" name="SizeParticle" id="sizeParticle" min="10px" max="30px"
+                        step="5" value="5" />
+                    Groß 
+                </span>
+            </span>
+                <hr />
+                <legend>Anzahl der Partikel</legend>
+                <span class="span">
+                <span>
+                    Wenig
+                    <input type="range" name="NumberParticle" id="numberParticle" min="10px" max="100px"
+                        step="10" value="10" />
+                    Viel 
+                </span>
+            </span>
+                <hr />
+                <legend>Lebensdauer der Partikel (in Sekunden)</legend>
+                <span class="span">
+                <span>
+                    Kurz
+                    <input type="range" name="LifetimeParticle" id="lifetimeParticle" min="5" max="50"
+                        step="5" value="5" />
+                    Lang 
+                </span>
+            </span>
+                <hr />
+                </fieldset>
+        </div>
+    </form>
+
+    <div id="userOutputRocketOne">
+        <h2>Rakete 1</h2>
+        <canvas id="rocketOne" width="370" height="155"></canvas>
+    </div>
+
+    <div>
+        <button id="rocketOneApproved">Raketenvorschau</button>
+        <button id="rocketOneNotApproved">Rakete löschen</button>
+    </div>
+    
+    <h2 class="general">Hier kannst du dein Feuerwerk ganz individuell gestalten. Starte dein Feuerwerk und drücke auf die Raketen-Button, 
+        um sie dann per Klick in dein Feuwerk einzufügen. Du kannst das Feuerwerk so lange löschen, bis du zufrieden bist. Speichere es dann am besten ab.</h2>
+    <div id="fireworksAnimation">
+        <button id="startAnimation">Feuerwerk gestalten</button>
+        <canvas id="animation" width="1000" height="400"></canvas>
+    </div>
+
+    <div>
+        <button id="choiseRocketOne">Rakete 1</button>
+        <button id="choiseRocketTwo">Rakete 2</button>
+        <button id="choiseRocketThree">Rakete 3</button>
+        <button type="reset" form="userInputRocketOne" id="deleteRockets">Feuerwerk löschen</button>
+        <button type="button" form="userInputRocketOne" id="saveRockets">Feuerwerk speichern</button>
+    </div>
+
+    <footer>
+        <p>Ein Feuerwerk von Jacqueline Moßig (MKB, 262533)</p>
+    </footer>
+</body>
+</html>
