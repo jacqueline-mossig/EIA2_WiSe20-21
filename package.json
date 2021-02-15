@@ -8,7 +8,7 @@
     "mongodb": "^3.6.3"
   },
   "scripts": {
-    "start": "node mongodb+srv://Jacky:<password>@cluster0.pzi8m.mongodb.net/<dbname>?retryWrites=true&w=majority/Server.js remote"
+    "start": "node Aufgaben/Endaufgabe_EIA2/Server/Server.js"
   },
   "repository": {
     "type": "git",
