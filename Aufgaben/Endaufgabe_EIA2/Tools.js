@@ -25,45 +25,41 @@ var Fireworks;
         gradient.addColorStop(1, "HSL(216, 100%, 50%)");
         Fireworks.crc2.fillStyle = gradient;
         Fireworks.crc2.fillRect(0, 0, Fireworks.crc2.canvas.width, Fireworks.crc2.canvas.height);
-        console.log("Kreis");
-        let circle = new Fireworks.Circle(_event, 50);
-        circle.draw();
-        Fireworks.symbols.push(circle);
-        // //////
-        // let rocketForms: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select#formRocket");
-        // switch (rocketForms.value) {
-        //         case "CircularRocket":
-        //             console.log("Kreis");
-        //             let circle: Circle = new Circle(_event, 50);
-        //             circle.draw();
-        //             symbols.push(circle);
-        //             break;
-        //         case "HeartLikeRocket":
-        //             console.log("Herz");
-        //             let heart: Heart = new Heart (_event, 50);
-        //             heart.draw();
-        //             symbols.push(heart);
-        //             break;
-        //         case "TriangularRocket":
-        //             console.log("Dreieck");
-        //             let triangular: Triangular = new Triangular (_event, 50);
-        //             triangular.draw();
-        //             symbols.push(triangular);
-        //             break;
-        //         case "RectangularRocket":
-        //             console.log("Viereck");
-        //             let rectangular: Rectangular = new Rectangular (_event, 50);
-        //             rectangular.draw();
-        //             symbols.push(rectangular);
-        //             break;
-        //         case "StarlikeRocket":
-        //             console.log("Stern");
-        //             let star: Rectangular = new Rectangular (_event, 50);
-        //             star.draw();
-        //             symbols.push(star);
-        //             break;
-        //     }
-        // console.log("Form gewählt");
+        ////////
+        let rocketForms = document.querySelector("select#formRocket");
+        switch (rocketForms.value) {
+            case "CircularRocket":
+                console.log("Kreis");
+                let circle = new Fireworks.Circle(_event, 50);
+                circle.draw();
+                Fireworks.symbols.push(circle);
+                break;
+            case "HeartLikeRocket":
+                console.log("Herz");
+                let heart = new Fireworks.Heart(_event, 50);
+                heart.draw();
+                Fireworks.symbols.push(heart);
+                break;
+            case "TriangularRocket":
+                console.log("Dreieck");
+                let triangular = new Fireworks.Triangular(_event, 50);
+                triangular.draw();
+                Fireworks.symbols.push(triangular);
+                break;
+            case "RectangularRocket":
+                console.log("Viereck");
+                let rectangular = new Fireworks.Rectangular(_event, 50);
+                rectangular.draw();
+                Fireworks.symbols.push(rectangular);
+                break;
+            case "StarlikeRocket":
+                console.log("Stern");
+                let star = new Fireworks.Rectangular(_event, 50);
+                star.draw();
+                Fireworks.symbols.push(star);
+                break;
+        }
+        console.log("Form gewählt");
     }
     Fireworks.drawFormsRocket = drawFormsRocket;
     // export function drawExplosionRocket(): void {

@@ -8,18 +8,14 @@ namespace Fireworks {
     async function handleLoad(_event: Event): Promise<void> {
         console.log("Start");
 
-        // let response: Response = await fetch("Data.json");      //Variable vom Typ Antwort anlegen, fetch gibt Antwort (Pomise), wartet dann bis es Data.json aufrufen kann
-        // let offer: string = await response.text();              //Variable Angebot anlegen, die liefert Versprechen, dass sie Text mit Anwort liefert, solange wartet sie 
-        // let data: Data = JSON.parse(offer);                  //Variable vom Typ Data anlegen, JSON wird dann von parse = interpretieren/übersetzten zum Angebots-Text übersetzt
-
         form = <HTMLFormElement>document.querySelector("form#userInputRocketOne");
         form.addEventListener("change", handleChange); 
         let startAnimation: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#startAnimation");
         startAnimation.addEventListener("click", startCanvas);
-        let userOutputRocketOne: HTMLCanvasElement = <HTMLCanvasElement>document.querySelector("canvas#animation"); 
-        userOutputRocketOne.addEventListener("click", startCanvasRocketOne);    
-        let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#saveRockets");
-        submit.addEventListener("click", sendOrder);
+        // let userOutputRocketOne: HTMLCanvasElement = <HTMLCanvasElement>document.querySelector("canvas#animation"); 
+        // userOutputRocketOne.addEventListener("click", startCanvasRocketOne);    
+        let saveRockets: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#saveRockets");
+        saveRockets.addEventListener("click", sendOrder);
     }
 
     async function sendOrder(_event: MouseEvent): Promise<void> {               //eine asynchrone Funktion gibt nicht einen beliebigen Typ zurück, sondern ein Promise
@@ -76,12 +72,12 @@ namespace Fireworks {
         drawBackground();
     }
 
-    function startCanvasRocketOne(_event: MouseEvent): void {
-        let x: number = _event.offsetX;
-        let y: number = _event.offsetY;
+    // function startCanvasRocketOne(_event: MouseEvent): void {
+    //     let x: number = _event.offsetX;
+    //     let y: number = _event.offsetY;
 
-        let rocket: HTMLCanvasElement = <HTMLCanvasElement>document.createElement("canvas");
-        rocket.style.left = x + "px";
-        rocket.style.top = y + "px";
-    }
+    //     let rocket: HTMLCanvasElement = <HTMLCanvasElement>document.createElement("canvas");
+    //     rocket.style.left = x + "px";
+    //     rocket.style.top = y + "px";
+    // }
 }

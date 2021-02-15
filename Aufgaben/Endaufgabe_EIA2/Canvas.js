@@ -3,8 +3,6 @@ var Fireworks;
 (function (Fireworks) {
     Fireworks.positionRocket = [];
     Fireworks.symbols = [];
-    Fireworks.user = getUserName();
-    Fireworks.url = "https://FireworksJacqueline.herokuapp.com/";
     Fireworks.canvasWidth = 1000;
     Fireworks.canvasHeight = 400;
     window.addEventListener("load", handleLoadThree);
@@ -27,31 +25,6 @@ var Fireworks;
         numberParticles.addEventListener("input", Fireworks.changeNumberParticle);
         let lifeParticle = document.querySelector("input#lifetimeParticle");
         lifeParticle.addEventListener("input", Fireworks.changeLifeParticle);
-        // let saveRocketsbutton: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#saveRockets");
-        // saveRocketsbutton.addEventListener("click", savePicture);
-        username();
-    }
-    function getUserName() {
-        // tslint:disable-next-line: typedef
-        let user = prompt("Please enter your username:", "Username");
-        if (user == null) {
-            return "";
-        }
-        else {
-            return user;
-        }
-    }
-    Fireworks.getUserName = getUserName;
-    function username() {
-        if (Fireworks.user == "") {
-            Fireworks.user = "User";
-            console.log("Feuerwerk " + Fireworks.user);
-            console.log("Willkommen " + Fireworks.user);
-        }
-        else {
-            console.log("Feuerwerk " + Fireworks.user);
-            console.log("Willkommen " + Fireworks.user);
-        }
     }
     function drawBackground() {
         console.log("Background");

@@ -1,30 +1,23 @@
 "use strict";
-//mongodb+srv://Jacky:<password>@cluster0.pzi8m.mongodb.net/<dbname>?retryWrites=true&w=majority
 Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
 var Fireworks;
 (function (Fireworks) {
-    // interface Rockets {
-    //     [type: string]: string | string[];
-    // }
     let canvasCollection;
+    let databaseUrl = "mongodb+srv://Jacky:<password>@cluster0.pzi8m.mongodb.net/<dbname>?retryWrites=true&w=majority";
     // Port kreieren, wenn Port nicht zugeteilt wird, selber einen Wert nehmen
     let port = process.env.PORT;
     if (port == undefined)
         port = 5001;
-    let databaseUrl = "mongodb+srv://Jacky:<password>@cluster0.pzi8m.mongodb.net/<dbname>?retryWrites=true&w=majority";
     startServer(port);
     connectToDatabase(databaseUrl);
     function startServer(_port) {
         // Server kreieren
         let server = Http.createServer();
         console.log(server);
-        // let canvasCollection: Mongo.Collection;
         console.log("Server startet on port:" + port);
-        // let databaseUrl: string = "mongodb+srv://test:12345@cluster0-4eh0n.mongodb.net/<dbname>?retryWrites=true&w=majority";
-        // console.log("Server starting on port:" + port);
         //Server soll auf port horchen
         server.listen(port);
         //Listener auf Server installieren
@@ -55,14 +48,14 @@ var Fireworks;
             //Assotiatives Array mithilfe von JSON in Zeichenketten umwandeln
             let jsonString = JSON.stringify(url.query);
             _response.write(jsonString);
-            // storeRockets(url.query);
+            storeRockets(url.query);
         }
         //Antwort beenden, damit sie verschickt wird
         _response.write("Das ist meine Antwort");
         _response.end();
     }
-    // function storeRockets(_rockets: Rockets): void {
-    //     canvasCollection.insert(_rockets);
-    // }
+    function storeRockets(_rockets) {
+        canvasCollection.insert(_rockets);
+    }
 })(Fireworks = exports.Fireworks || (exports.Fireworks = {}));
 //# sourceMappingURL=Server.js.map

@@ -1,24 +1,19 @@
-
-
-//mongodb+srv://Jacky:<password>@cluster0.pzi8m.mongodb.net/<dbname>?retryWrites=true&w=majority
-
 import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
 
 export namespace Fireworks {
-    // interface Rockets {
-    //     [type: string]: string | string[];
-    // }
+    interface Rockets {
+        [type: string]: string | string[];
+    }
     
     let canvasCollection: Mongo.Collection;
+    let databaseUrl: string = "mongodb+srv://Jacky:<password>@cluster0.pzi8m.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
     // Port kreieren, wenn Port nicht zugeteilt wird, selber einen Wert nehmen
     let port: number | string | undefined = process.env.PORT;
     if (port == undefined)
          port = 5001;
-
-    let databaseUrl: string = "mongodb+srv://Jacky:<password>@cluster0.pzi8m.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
     startServer(port);
     connectToDatabase(databaseUrl);
@@ -27,13 +22,8 @@ export namespace Fireworks {
         // Server kreieren
         let server: Http.Server = Http.createServer();
         console.log(server);
-        // let canvasCollection: Mongo.Collection;
     
         console.log("Server startet on port:" + port);
-
-        // let databaseUrl: string = "mongodb+srv://test:12345@cluster0-4eh0n.mongodb.net/<dbname>?retryWrites=true&w=majority";
-
-        // console.log("Server starting on port:" + port);
 
         //Server soll auf port horchen
         server.listen(port);
@@ -70,14 +60,14 @@ export namespace Fireworks {
             let jsonString: string = JSON.stringify(url.query);
             _response.write(jsonString);
 
-            // storeRockets(url.query);
+            storeRockets(url.query);
         }
         //Antwort beenden, damit sie verschickt wird
         _response.write("Das ist meine Antwort");
         _response.end();
     }
 
-    // function storeRockets(_rockets: Rockets): void {
-    //     canvasCollection.insert(_rockets);
-    // }
+    function storeRockets(_rockets: Rockets): void {
+        canvasCollection.insert(_rockets);
+    }
 }

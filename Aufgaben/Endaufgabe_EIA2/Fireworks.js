@@ -6,17 +6,14 @@ var Fireworks;
     let url = "http://localhost:5001"; //url ist der Server
     async function handleLoad(_event) {
         console.log("Start");
-        // let response: Response = await fetch("Data.json");      //Variable vom Typ Antwort anlegen, fetch gibt Antwort (Pomise), wartet dann bis es Data.json aufrufen kann
-        // let offer: string = await response.text();              //Variable Angebot anlegen, die liefert Versprechen, dass sie Text mit Anwort liefert, solange wartet sie 
-        // let data: Data = JSON.parse(offer);                  //Variable vom Typ Data anlegen, JSON wird dann von parse = interpretieren/übersetzten zum Angebots-Text übersetzt
         form = document.querySelector("form#userInputRocketOne");
         form.addEventListener("change", handleChange);
         let startAnimation = document.querySelector("button#startAnimation");
         startAnimation.addEventListener("click", startCanvas);
-        let userOutputRocketOne = document.querySelector("canvas#animation");
-        userOutputRocketOne.addEventListener("click", startCanvasRocketOne);
-        let submit = document.querySelector("button#saveRockets");
-        submit.addEventListener("click", sendOrder);
+        // let userOutputRocketOne: HTMLCanvasElement = <HTMLCanvasElement>document.querySelector("canvas#animation"); 
+        // userOutputRocketOne.addEventListener("click", startCanvasRocketOne);    
+        let saveRockets = document.querySelector("button#saveRockets");
+        saveRockets.addEventListener("click", sendOrder);
     }
     async function sendOrder(_event) {
         console.log("Send order");
@@ -66,12 +63,12 @@ var Fireworks;
         Fireworks.crc2 = canvasAnimation.getContext("2d");
         Fireworks.drawBackground();
     }
-    function startCanvasRocketOne(_event) {
-        let x = _event.offsetX;
-        let y = _event.offsetY;
-        let rocket = document.createElement("canvas");
-        rocket.style.left = x + "px";
-        rocket.style.top = y + "px";
-    }
+    // function startCanvasRocketOne(_event: MouseEvent): void {
+    //     let x: number = _event.offsetX;
+    //     let y: number = _event.offsetY;
+    //     let rocket: HTMLCanvasElement = <HTMLCanvasElement>document.createElement("canvas");
+    //     rocket.style.left = x + "px";
+    //     rocket.style.top = y + "px";
+    // }
 })(Fireworks || (Fireworks = {}));
 //# sourceMappingURL=Fireworks.js.map

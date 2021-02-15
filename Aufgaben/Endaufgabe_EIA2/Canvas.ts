@@ -14,8 +14,6 @@ namespace Fireworks {
     export let symbols: Vector[] = [];
     export let button: MouseEvent;
 
-    export let user: string = getUserName();
-    export let url: string = "https://FireworksJacqueline.herokuapp.com/";
     export let canvasWidth: number = 1000;
     export let canvasHeight: number = 400;
 
@@ -41,32 +39,6 @@ namespace Fireworks {
         numberParticles.addEventListener("input", changeNumberParticle);
         let lifeParticle: HTMLInputElement = <HTMLInputElement>document.querySelector("input#lifetimeParticle");
         lifeParticle.addEventListener("input", changeLifeParticle);
-
-        // let saveRocketsbutton: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#saveRockets");
-        // saveRocketsbutton.addEventListener("click", savePicture);
-
-        username();
-    }
-
-    export function getUserName(): string {
-        // tslint:disable-next-line: typedef
-        let user = prompt("Please enter your username:", "Username");
-        if (user == null) {
-            return "";
-        }
-        else {
-            return user;
-        }
-    }
-    function username(): void {
-        if (user == "") {
-            user = "User";
-            console.log("Feuerwerk " + user);
-            console.log("Willkommen " + user);
-        } else {
-            console.log("Feuerwerk " + user);
-            console.log("Willkommen " + user);
-        }
     }
 
     export function drawBackground(): void {
