@@ -8,14 +8,12 @@ namespace Fireworks {
     async function handleLoad(_event: Event): Promise<void> {
         console.log("Start");
 
-        startCanvasRocketOne();
-        startCanvasFireworks(); 
+        // startCanvasRocketOne();
+        // startCanvasFireworks(); 
         form = <HTMLFormElement>document.querySelector("form#userInputRocketOne");
         form.addEventListener("change", handleChange);
         let saveRockets: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#saveRockets");
         saveRockets.addEventListener("click", saveRockets);
-
-        username();
     }
 
     async function saveRockets(_event: MouseEvent): Promise<void> {               
@@ -59,43 +57,23 @@ namespace Fireworks {
         console.groupEnd();
     }
 
-    function startCanvasFireworks(): void {
-        let canvasAnimation: HTMLCanvasElement | null = document.querySelector("canvas#animation");
-        if (!canvasAnimation)                                                              
-            return;
-        crc2 = <CanvasRenderingContext2D>canvasAnimation.getContext("2d");
+    // function startCanvasFireworks(): void {
+    //     let canvasAnimation: HTMLCanvasElement | null = document.querySelector("canvas#animation");
+    //     if (!canvasAnimation)                                                              
+    //         return;
+    //     crc2 = <CanvasRenderingContext2D>canvasAnimation.getContext("2d");
 
-        drawBackground();
-    }
+    //     drawBackground();
+    // }
 
-    function startCanvasRocketOne(): void {
-        let canvasAnimation: HTMLCanvasElement | null = document.querySelector("canvas#showRocket");
-        if (!canvasAnimation)                                                              
-            return;
-        crc2 = <CanvasRenderingContext2D>canvasAnimation.getContext("2d");
+    // function startCanvasRocketOne(): void {
+    //     let canvasAnimation: HTMLCanvasElement | null = document.querySelector("canvas#showRocket");
+    //     if (!canvasAnimation)                                                              
+    //         return;
+    //     crc2 = <CanvasRenderingContext2D>canvasAnimation.getContext("2d");
 
-        drawBackground();
-    }
-
-    export function getUserName(): string{
-        let user: string | null = prompt("Please enter your username:", "Username");
-        if (user == null) {
-            return "";
-        }
-        else {
-            return user;
-        }
-    }
-    function username(): void {
-        if (user == "") {
-            user = "User";
-            console.log("Rockets " + user);
-            console.log("Welcome " + user);
-        } else {
-            console.log("Rockets " + user);
-            console.log("Welcome " + user);
-        }
-    }
+    //     drawBackground();
+    // }
 
     export function startAnimation(): void {
         if (counter == 0) {

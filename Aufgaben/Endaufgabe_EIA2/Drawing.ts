@@ -4,7 +4,6 @@ namespace Fireworks {
     function handleLoadTwo(): void {
         let drawRocket: HTMLCanvasElement = <HTMLCanvasElement>document.querySelector("canvas#showRocket");
         drawRocket.addEventListener("click", drawFormsRocket);
-        // drawRocket.addEventListener("click", drawParticles);
     }
     
     export function drawFormsRocket(_event: MouseEvent): void {
@@ -42,7 +41,6 @@ namespace Fireworks {
                     heartRocket.draw();
                     crc2.fill();
                     symbols.push(heartRocket);
-                    // heartRocket.scale(radiusOfRocket);
                     formtypeRocket = heartRocket.getType();
                     break;
                 case "TriangularRocket":

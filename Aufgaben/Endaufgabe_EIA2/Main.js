@@ -6,13 +6,12 @@ var Fireworks;
     let url = "http://localhost:5001"; //url ist der Server
     async function handleLoad(_event) {
         console.log("Start");
-        startCanvasRocketOne();
-        startCanvasFireworks();
+        // startCanvasRocketOne();
+        // startCanvasFireworks(); 
         form = document.querySelector("form#userInputRocketOne");
         form.addEventListener("change", handleChange);
         let saveRockets = document.querySelector("button#saveRockets");
         saveRockets.addEventListener("click", saveRockets);
-        username();
     }
     async function saveRockets(_event) {
         console.log("Send order");
@@ -52,41 +51,20 @@ var Fireworks;
         }
         console.groupEnd();
     }
-    function startCanvasFireworks() {
-        let canvasAnimation = document.querySelector("canvas#animation");
-        if (!canvasAnimation)
-            return;
-        Fireworks.crc2 = canvasAnimation.getContext("2d");
-        Fireworks.drawBackground();
-    }
-    function startCanvasRocketOne() {
-        let canvasAnimation = document.querySelector("canvas#showRocket");
-        if (!canvasAnimation)
-            return;
-        Fireworks.crc2 = canvasAnimation.getContext("2d");
-        Fireworks.drawBackground();
-    }
-    function getUserName() {
-        let user = prompt("Please enter your username:", "Username");
-        if (user == null) {
-            return "";
-        }
-        else {
-            return user;
-        }
-    }
-    Fireworks.getUserName = getUserName;
-    function username() {
-        if (Fireworks.user == "") {
-            Fireworks.user = "User";
-            console.log("Rockets " + Fireworks.user);
-            console.log("Welcome " + Fireworks.user);
-        }
-        else {
-            console.log("Rockets " + Fireworks.user);
-            console.log("Welcome " + Fireworks.user);
-        }
-    }
+    // function startCanvasFireworks(): void {
+    //     let canvasAnimation: HTMLCanvasElement | null = document.querySelector("canvas#animation");
+    //     if (!canvasAnimation)                                                              
+    //         return;
+    //     crc2 = <CanvasRenderingContext2D>canvasAnimation.getContext("2d");
+    //     drawBackground();
+    // }
+    // function startCanvasRocketOne(): void {
+    //     let canvasAnimation: HTMLCanvasElement | null = document.querySelector("canvas#showRocket");
+    //     if (!canvasAnimation)                                                              
+    //         return;
+    //     crc2 = <CanvasRenderingContext2D>canvasAnimation.getContext("2d");
+    //     drawBackground();
+    // }
     function startAnimation() {
         if (Fireworks.counter == 0) {
             Fireworks.counter++;
@@ -123,4 +101,4 @@ var Fireworks;
     }
     Fireworks.update = update;
 })(Fireworks || (Fireworks = {}));
-//# sourceMappingURL=Fireworks.js.map
+//# sourceMappingURL=Main.js.map

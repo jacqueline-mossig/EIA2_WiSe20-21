@@ -5,7 +5,6 @@ var Fireworks;
     function handleLoadTwo() {
         let drawRocket = document.querySelector("canvas#showRocket");
         drawRocket.addEventListener("click", drawFormsRocket);
-        // drawRocket.addEventListener("click", drawParticles);
     }
     function drawFormsRocket(_event) {
         let canvasRocketOne = document.querySelector("canvas#showRocket");
@@ -38,7 +37,6 @@ var Fireworks;
                 heartRocket.draw();
                 Fireworks.crc2.fill();
                 Fireworks.symbols.push(heartRocket);
-                // heartRocket.scale(radiusOfRocket);
                 Fireworks.formtypeRocket = heartRocket.getType();
                 break;
             case "TriangularRocket":
