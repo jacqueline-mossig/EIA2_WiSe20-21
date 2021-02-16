@@ -16,26 +16,16 @@ var Fireworks;
         return Fireworks.colorOfRocket;
     }
     Fireworks.changeColorRocket = changeColorRocket;
-    function changeFormRocket() {
-        canvasRendering();
-        let formRocket = document.querySelector("select#formRocket");
-        Fireworks.crc2.strokeStyle = formRocket.value;
-        Fireworks.formOfRocket = formRocket.value;
-        return Fireworks.formOfRocket;
-    }
-    Fireworks.changeFormRocket = changeFormRocket;
     function changeSizeRocket() {
-        // canvasRendering();
         let sizeRocket = document.querySelector("input#sizeRocket");
-        let amount = parseFloat(sizeRocket.value);
-        Fireworks.radiusRocket = amount;
+        let amountSizeRocket = parseFloat(sizeRocket.value);
+        Fireworks.radiusOfRocket = amountSizeRocket;
     }
     Fireworks.changeSizeRocket = changeSizeRocket;
     function changeExplosionRocket() {
-        // canvasRendering();
         let explosionRadiusRocket = document.querySelector("input#explosionRadiusRocket");
-        let amount = parseFloat(explosionRadiusRocket.value);
-        Fireworks.explosionRocket = amount;
+        let amountExplosionRadiusRocket = parseFloat(explosionRadiusRocket.value);
+        Fireworks.explosionOfRocket = amountExplosionRadiusRocket;
     }
     Fireworks.changeExplosionRocket = changeExplosionRocket;
     function changeColorParticle() {
@@ -46,33 +36,23 @@ var Fireworks;
         return Fireworks.colorOfParticle;
     }
     Fireworks.changeColorParticle = changeColorParticle;
-    function changeFormParticle() {
-        let formParticle = document.querySelector("select#formParticle");
-        Fireworks.crc2.strokeStyle = formParticle.value;
-        Fireworks.formOfParticle = formParticle.value;
-        return Fireworks.formOfParticle;
-    }
-    Fireworks.changeFormParticle = changeFormParticle;
     function changeSizeParticle() {
-        // canvasRendering();
         let sizeParticle = document.querySelector("input#sizeParticle");
-        let amount = parseFloat(sizeParticle.value);
-        Fireworks.radiusRocket = amount;
+        let amountSizeParticle = parseFloat(sizeParticle.value);
+        Fireworks.radiusOfParticle = amountSizeParticle;
     }
     Fireworks.changeSizeParticle = changeSizeParticle;
     function changeNumberParticle() {
-        // canvasRendering();
-        let numberParticle = document.querySelector("input#numberParticle");
-        let amount = parseFloat(numberParticle.value);
-        Fireworks.numberParticles = amount;
+        let numberOfParticle = document.querySelector("input#numberParticle");
+        let amountNumberParticle = parseFloat(numberOfParticle.value);
+        Fireworks.numberOfParticles = amountNumberParticle;
     }
     Fireworks.changeNumberParticle = changeNumberParticle;
-    function changeLifeParticle() {
-        // canvasRendering();
+    function changeLifetimeParticle() {
         let lifetimeParticle = document.querySelector("input#lifetimeParticle");
-        let amount = parseFloat(lifetimeParticle.value);
-        Fireworks.lifeParticle = amount;
+        let amountLifetimeParticle = parseFloat(lifetimeParticle.value);
+        Fireworks.lifeOfParticle = amountLifetimeParticle;
     }
-    Fireworks.changeLifeParticle = changeLifeParticle;
+    Fireworks.changeLifetimeParticle = changeLifetimeParticle;
 })(Fireworks || (Fireworks = {}));
-//# sourceMappingURL=Anpassung.js.map
+//# sourceMappingURL=FitInput.js.map

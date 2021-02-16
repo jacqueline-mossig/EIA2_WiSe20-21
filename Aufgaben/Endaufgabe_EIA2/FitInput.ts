@@ -14,26 +14,16 @@ namespace Fireworks {
         return colorOfRocket;
     }
 
-    export function changeFormRocket(): string {
-        canvasRendering();
-        let formRocket: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select#formRocket");
-        crc2.strokeStyle = formRocket.value;
-        formOfRocket = formRocket.value;
-        return formOfRocket;
-    }
-
     export function changeSizeRocket(): void {
-        // canvasRendering();
         let sizeRocket: HTMLInputElement = <HTMLInputElement>document.querySelector("input#sizeRocket");
-        let amount: number = parseFloat(sizeRocket.value);
-        radiusRocket = amount;
+        let amountSizeRocket: number = parseFloat(sizeRocket.value);
+        radiusOfRocket = amountSizeRocket;
     }
 
     export function changeExplosionRocket(): void {
-        // canvasRendering();
         let explosionRadiusRocket: HTMLInputElement = <HTMLInputElement>document.querySelector("input#explosionRadiusRocket");
-        let amount: number = parseFloat(explosionRadiusRocket.value);
-        explosionRocket = amount;
+        let amountExplosionRadiusRocket: number = parseFloat(explosionRadiusRocket.value);
+        explosionOfRocket = amountExplosionRadiusRocket;
     }
 
     export function changeColorParticle(): string {
@@ -43,32 +33,22 @@ namespace Fireworks {
         colorOfParticle = colorParticle.value;
         return colorOfParticle;
     }
-
-    export function changeFormParticle(): string {
-        let formParticle: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select#formParticle");
-        crc2.strokeStyle = formParticle.value;
-        formOfParticle = formParticle.value;
-        return formOfParticle;
-    }
     
     export function changeSizeParticle(): void {
-        // canvasRendering();
         let sizeParticle: HTMLInputElement = <HTMLInputElement>document.querySelector("input#sizeParticle");
-        let amount: number = parseFloat(sizeParticle.value);
-        radiusRocket = amount;
+        let amountSizeParticle: number = parseFloat(sizeParticle.value);
+        radiusOfParticle = amountSizeParticle;
     }
 
     export function changeNumberParticle(): void {
-        // canvasRendering();
-        let numberParticle: HTMLInputElement = <HTMLInputElement>document.querySelector("input#numberParticle");
-        let amount: number = parseFloat(numberParticle.value);
-        numberParticles = amount;
+        let numberOfParticle: HTMLInputElement = <HTMLInputElement>document.querySelector("input#numberParticle");
+        let amountNumberParticle: number = parseFloat(numberOfParticle.value);
+        numberOfParticles = amountNumberParticle;
     }
 
-    export function changeLifeParticle(): void {
-        // canvasRendering();
+    export function changeLifetimeParticle(): void {
         let lifetimeParticle: HTMLInputElement = <HTMLInputElement>document.querySelector("input#lifetimeParticle");
-        let amount: number = parseFloat(lifetimeParticle.value);
-        lifeParticle = amount;
+        let amountLifetimeParticle: number = parseFloat(lifetimeParticle.value);
+        lifeOfParticle = amountLifetimeParticle;
     }
 }
